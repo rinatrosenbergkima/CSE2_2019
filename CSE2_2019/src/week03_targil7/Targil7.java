@@ -2,16 +2,16 @@ package week03_targil7;
 
 //import java.util.Stack;
 import java.util.Scanner;
+import unit4.collectionsLib.*;
 
-import edu_package.*;
 public class Targil7 {
 	static Stack <Car> stackCarsParked = new Stack<>();
 	static Stack <Car> stackCarsOut = new Stack<>();
 	static int numCarsParked;
 	
 	public static void parkCar (int carId) {
-		//if (stackCarsParked.size() < 10) {
-		if (numCarsParked < 10) {
+		//if (stackCarsParked.size() < 10) { //if using java.util.Stack;
+		if (numCarsParked < 10) { //if using edu_
 			Car carIn = new Car (carId);
 			stackCarsParked.push(carIn);
 			numCarsParked++;

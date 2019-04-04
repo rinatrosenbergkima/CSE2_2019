@@ -9,10 +9,12 @@ public class Targil7 {
 	static Stack <Car> stackCarsOut = new Stack<>();
 	static int numCarsParked;
 	
-	public static void parkCar (int carId) {
+	public static void parkCar (int carLicense) {
+		//try to park car with carLicense (if there is a space)
+		
 		//if (stackCarsParked.size() < 10) { //if using java.util.Stack;
 		if (numCarsParked < 10) { //if using edu_
-			Car carIn = new Car (carId);
+			Car carIn = new Car (carLicense);
 			stackCarsParked.push(carIn);
 			numCarsParked++;
 			System.out.println(carIn+ " was parked");
@@ -22,6 +24,7 @@ public class Targil7 {
 	}
 	
 	public static void exitCar(int carLicense) {
+		//try to exit car with carLicense from stackCarsParked (if there) using stackCarsMoved.
 		boolean carFound = false;
 		while (!stackCarsParked.isEmpty()) {	
 			Car exitCar = stackCarsParked.pop();
@@ -54,6 +57,7 @@ public class Targil7 {
 	
 	public static void main(String[] args) {
 		//Solve Targil 7 - manage a parking lot
+		//See full description here:
 		//http://blog.csit.org.il/UpLoad/FilesUpload/stack_ex1.pdf
 		
 		Scanner input = new Scanner (System.in);

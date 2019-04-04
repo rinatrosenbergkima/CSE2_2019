@@ -1,4 +1,4 @@
-package EduLibrary;
+package edu_package;
 
 //package unit4.collectionsLib;
 

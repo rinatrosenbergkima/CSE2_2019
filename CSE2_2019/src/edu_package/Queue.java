@@ -1,5 +1,5 @@
 //package unit4.collectionsLib;
-package EduLibrary;
+package edu_package;
 
 /** 
  * <h3 dir="rtl" style="color:red; font-family: Helvetica, Arial, sans-serif">

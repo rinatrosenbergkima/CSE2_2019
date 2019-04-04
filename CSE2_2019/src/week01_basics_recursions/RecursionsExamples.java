@@ -1,6 +1,6 @@
-package ClassWork;
+package week01_basics_recursions;
 
-public class Week01_Recursions {
+public class RecursionsExamples {
 	
 	public static int factorial (int num) {
 	//calculate recursively the factorial of num:

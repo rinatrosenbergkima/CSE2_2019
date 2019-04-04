@@ -1,17 +1,21 @@
-package Week03_targil7;
+package week03_targil7;
 
 //import java.util.Stack;
 import java.util.Scanner;
 
+import edu_package.*;
 public class Targil7 {
 	static Stack <Car> stackCarsParked = new Stack<>();
 	static Stack <Car> stackCarsOut = new Stack<>();
+	static int numCarsParked;
 	
 	public static void parkCar (int carId) {
-		if (stackCarsParked.size() < 10) {
+		//if (stackCarsParked.size() < 10) {
+		if (numCarsParked < 10) {
 			Car carIn = new Car (carId);
 			stackCarsParked.push(carIn);
-			System.out.println(carIn+ " was parked at location "+stackCarsParked.size());
+			numCarsParked++;
+			System.out.println(carIn+ " was parked");
 		}
 		else
 			System.out.println("Sorry, parking lot is full");
@@ -23,6 +27,7 @@ public class Targil7 {
 			Car exitCar = stackCarsParked.pop();
 			exitCar.increaseNumOfMoves();
 			if (exitCar.getLicense ()== carLicense) {//this is the car that needs to exit
+				numCarsParked--;
 				System.out.println(exitCar + " was removed");
 				carFound = true;
 				break; 
@@ -36,7 +41,6 @@ public class Targil7 {
 			System.out.println("Sorry, car license "+carLicense+" was not found in the parking lot");
 		}
 		returnCarsOut();
-		System.out.println("stackCarsParked="+stackCarsParked);
 		
 	}
 	public static void returnCarsOut() {
@@ -49,24 +53,28 @@ public class Targil7 {
 	}
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		//Solve Targil 7 - manage a parking lot
+		//http://blog.csit.org.il/UpLoad/FilesUpload/stack_ex1.pdf
+		
 		Scanner input = new Scanner (System.in);
+		numCarsParked=0;
 		System.out.println("Enter next input in the form of:\n "
 				+ "A (park car)/D (exit car) followed by car license (e.g. A1234345)"
 				+"\n Type 'Stop' to finish");
-		while (true) {
+		while (true) { //keep reading next input
 			String nextInput = input.nextLine(); //in the form of A1111111
 			if (nextInput.equals("Stop")) {//exit the program
 				break;
 			}
-			char operation = nextInput.charAt(0);
+			char operation = nextInput.charAt(0);//'D' or 'A'
 			int carLicense = Integer.parseInt(nextInput.substring(1, nextInput.length()));
-			if (operation=='A') { //Enter car
+			if (operation=='A') { //park car
 				parkCar(carLicense);
 			}
-			else if (operation=='D') { //Remove car
+			else if (operation=='D') { //exit car from parking
 				exitCar(carLicense);
 			}
+			System.out.println("stackCarsParked="+stackCarsParked);
 	
 		}
 		

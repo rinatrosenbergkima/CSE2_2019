@@ -1,7 +1,7 @@
-package ClassWork;
+package week03_basics_stack_queue;
 import java.util.Queue;
 import java.util.LinkedList;
-public class Week03_Queue {
+public class QueueExample {
 
 	public static void queueExample() {
 		//Create and initialize a Queue using a LinkedList:

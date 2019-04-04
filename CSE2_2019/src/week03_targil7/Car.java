@@ -1,4 +1,4 @@
-package Week03_targil7;
+package week03_targil7;
 
 public class Car {
 	private int license;

@@ -1,7 +1,7 @@
-package ClassWork;
+package week03_basics_stack_queue;
 
 import java.util.Stack;
-public class Week03_Stack {
+public class StackExample {
 	public static void stackExample() {
 		//Create a stack
 		Stack <String> stackOfCards = new Stack<>();

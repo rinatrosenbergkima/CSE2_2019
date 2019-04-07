@@ -18,6 +18,9 @@ public class QueueExample {
 		waitingQueue.insert("John");
 		waitingQueue.insert("Mark");
 	
+		//check is queue empty:
+		System.out.println("isEmpty="+waitingQueue.isEmpty());
+		
 		//print queue:
 		System.out.println("WaitingQueue: "+waitingQueue);
 		
@@ -28,7 +31,7 @@ public class QueueExample {
 		//print queue:
 		System.out.println("waitingQueue="+waitingQueue);
 		
-		//check who is in the head of the queue:
+		//check who is in the head of the queue (will not be removed from queue):
 		String headQueue = waitingQueue.head();
 		System.out.println("headQueue="+headQueue);
 		

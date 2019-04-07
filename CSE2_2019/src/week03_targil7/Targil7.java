@@ -57,8 +57,7 @@ public class Targil7 {
 	
 	public static void main(String[] args) {
 		//Solve Targil 7 - manage a parking lot
-		//See full description here:
-		//http://blog.csit.org.il/UpLoad/FilesUpload/stack_ex1.pdf
+		//See full description in stack_ex1.pdf targil 7
 		
 		Scanner input = new Scanner (System.in);
 		numCarsParked=0;

@@ -1,7 +1,7 @@
 package week04_basics;
 import java.util.Scanner;
 
-import unit4.collectionsLib.*;
+import unit4_collectionsLib.*;
 
 public class ListExamples {
 	

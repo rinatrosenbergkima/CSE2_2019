@@ -2,7 +2,7 @@ package week03_basics_stack_queue;
 //import java.util.Queue;
 //import java.util.LinkedList;
 
-import unit4.collectionsLib.*; //Misrad Hachinuch collection
+import unit4_collectionsLib.*;
 
 public class QueueExample {
 

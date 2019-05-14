@@ -1,7 +1,7 @@
 package week7_trees;
 import java.util.Scanner;
-import unit4.collectionsLib.*;
-import unit4.utilsLib.BinTreeUtils;
+import unit4_collectionsLib.*;
+import unit4_utilsLib.*;
 
 /**
  * פתרונות לשאלות מפרק 10 עץ בינרי

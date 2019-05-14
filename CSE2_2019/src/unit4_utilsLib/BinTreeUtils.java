@@ -1,13 +1,13 @@
 package unit4_utilsLib;
-
-import unit4_collectionsLib.*;
+import unit4_collectionsLib.BinTreeNode;
+import unit4_collectionsLib.Queue;
 
 /**
  * <h3 dir="rtl" style="color:red; font-family: Helvetica, Arial, sans-serif">
- * מחלקת שירות המכילה אוסף פעולות סטטיות שימושיות בעבודה עם עץ בינרי 
+ * ֳ®ֳ§ֳ¬ֳ·ֳ÷ ֳ¹ֳ©ֳ¸ֳ¥ֳ÷ ֳ₪ֳ®ֳ«ֳ©ֳ¬ֳ₪ ֳ ֳ¥ֳ±ֳ³ ֳ´ֳ²ֳ¥ֳ¬ֳ¥ֳ÷ ֳ±ֳ¨ֳ¨ֳ©ֳ¥ֳ÷ ֳ¹ֳ©ֳ®ֳ¥ֳ¹ֳ©ֳ¥ֳ÷ ֳ¡ֳ²ֳ¡ֳ¥ֳ£ֳ₪ ֳ²ֳ­ ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© 
  * </h3>
  *
- * @author צוות מדעי המחשב, המרכז להוראת המדעים, האוניברסיטה העברית, ירושלים
+ * @author ֳ¶ֳ¥ֳ¥ֳ÷ ֳ®ֳ£ֳ²ֳ© ֳ₪ֳ®ֳ§ֳ¹ֳ¡, ֳ₪ֳ®ֳ¸ֳ«ֳ¦ ֳ¬ֳ₪ֳ¥ֳ¸ֳ ֳ÷ ֳ₪ֳ®ֳ£ֳ²ֳ©ֳ­, ֳ₪ֳ ֳ¥ֳ°ֳ©ֳ¡ֳ¸ֳ±ֳ©ֳ¨ֳ₪ ֳ₪ֳ²ֳ¡ֳ¸ֳ©ֳ÷, ֳ©ֳ¸ֳ¥ֳ¹ֳ¬ֳ©ֳ­
  * @version 20.11.2006
  */
 public final class BinTreeUtils
@@ -18,11 +18,11 @@ public final class BinTreeUtils
 	/** 
 	 * <dt dir="rtl" >
      * <b>
-	 * הפעולה מציגה את הבינרי המתקבל בצורה גרפית
+	 * ֳ₪ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ®ֳ¶ֳ©ֳ¢ֳ₪ ֳ ֳ÷ ֳ₪ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ₪ֳ®ֳ÷ֳ·ֳ¡ֳ¬ ֳ¡ֳ¶ֳ¥ֳ¸ֳ₪ ֳ¢ֳ¸ֳ´ֳ©ֳ÷
      * </b>
 	 *
-	 * @param tree עץ בינרי גנרי
-	 * @param title פרמטר אופציונאלי: כותרת החלון בו יוצג העץ הבינרי
+	 * @param tree ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ¢ֳ°ֳ¸ֳ©
+	 * @param title ֳ´ֳ¸ֳ®ֳ¨ֳ¸ ֳ ֳ¥ֳ´ֳ¶ֳ©ֳ¥ֳ°ֳ ֳ¬ֳ©: ֳ«ֳ¥ֳ÷ֳ¸ֳ÷ ֳ₪ֳ§ֳ¬ֳ¥ֳ¯ ֳ¡ֳ¥ ֳ©ֳ¥ֳ¶ֳ¢ ֳ₪ֳ²ֳµ ֳ₪ֳ¡ֳ©ֳ°ֳ¸ֳ©
 	 */
 	public static void showTree(Object tree, String... title)
 	{
@@ -37,17 +37,17 @@ public final class BinTreeUtils
 			String str ="";
 	    	for(String s : title)
 				str = str + s;
-			BinTreeViewer.show(tree,str);
+			//BinTreeViewer.show(tree,str);
 		}
 	}
 	/**
 	 * <dt dir="rtl" >
      * <b>
-	 * הפעולה יוצרת ומחזירה עץ ביטוי חשבוני
+	 * ֳ₪ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ©ֳ¥ֳ¶ֳ¸ֳ÷ ֳ¥ֳ®ֳ§ֳ¦ֳ©ֳ¸ֳ₪ ֳ²ֳµ ֳ¡ֳ©ֳ¨ֳ¥ֳ© ֳ§ֳ¹ֳ¡ֳ¥ֳ°ֳ©
      * </b>
 	 * 
-	 * @param exp מחרוזת המייצגת ביטוי חשבוני תקין
-	 * @return עץ ביטוי חשבוני
+	 * @param exp ֳ®ֳ§ֳ¸ֳ¥ֳ¦ֳ÷ ֳ₪ֳ®ֳ©ֳ©ֳ¶ֳ¢ֳ÷ ֳ¡ֳ©ֳ¨ֳ¥ֳ© ֳ§ֳ¹ֳ¡ֳ¥ֳ°ֳ© ֳ÷ֳ·ֳ©ֳ¯
+	 * @return ֳ²ֳµ ֳ¡ֳ©ֳ¨ֳ¥ֳ© ֳ§ֳ¹ֳ¡ֳ¥ֳ°ֳ©
 	 */
 	public static BinTreeNode<String> buildExpressionTree(String exp)
 	{
@@ -57,13 +57,13 @@ public final class BinTreeUtils
 	/**
 	 * <dt dir="rtl" >
      * <b>
-	 * הפעולה יוצרת ומחזירה עץ בינרי אקראי עם ערכים מספריים אקראיים
+	 * ֳ₪ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ©ֳ¥ֳ¶ֳ¸ֳ÷ ֳ¥ֳ®ֳ§ֳ¦ֳ©ֳ¸ֳ₪ ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ ֳ·ֳ¸ֳ ֳ© ֳ²ֳ­ ֳ²ֳ¸ֳ«ֳ©ֳ­ ֳ®ֳ±ֳ´ֳ¸ֳ©ֳ©ֳ­ ֳ ֳ·ֳ¸ֳ ֳ©ֳ©ֳ­
      * </b>
 	 * 
-	 * @param maxNodes מספר צמתים מקסימלי
-	 * @param low ערך מינימלי שיכול להיות בעץ
-	 * @param high ערך מקסימלי שיכול להיות בעץ
-	 * @return עץ בינרי עם ערכים אקראיים
+	 * @param maxNodes ֳ®ֳ±ֳ´ֳ¸ ֳ¶ֳ®ֳ÷ֳ©ֳ­ ֳ®ֳ·ֳ±ֳ©ֳ®ֳ¬ֳ©
+	 * @param low ֳ²ֳ¸ֳ× ֳ®ֳ©ֳ°ֳ©ֳ®ֳ¬ֳ© ֳ¹ֳ©ֳ«ֳ¥ֳ¬ ֳ¬ֳ₪ֳ©ֳ¥ֳ÷ ֳ¡ֳ²ֳµ
+	 * @param high ֳ²ֳ¸ֳ× ֳ®ֳ·ֳ±ֳ©ֳ®ֳ¬ֳ© ֳ¹ֳ©ֳ«ֳ¥ֳ¬ ֳ¬ֳ₪ֳ©ֳ¥ֳ÷ ֳ¡ֳ²ֳµ
+	 * @return ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ²ֳ­ ֳ²ֳ¸ֳ«ֳ©ֳ­ ֳ ֳ·ֳ¸ֳ ֳ©ֳ©ֳ­
 	 */
 	public static BinTreeNode<Integer> buildRandomTree(int maxNodes, int low, int high)
 	{
@@ -98,11 +98,11 @@ public final class BinTreeUtils
 	/**
 	 * <dt dir="rtl" >
      * <b>
-	 * פעולה המחזירה מחרוזת המתארת את סריקת העץ בסדר תחילי
+	 * ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ₪ֳ®ֳ§ֳ¦ֳ©ֳ¸ֳ₪ ֳ®ֳ§ֳ¸ֳ¥ֳ¦ֳ÷ ֳ₪ֳ®ֳ÷ֳ ֳ¸ֳ÷ ֳ ֳ÷ ֳ±ֳ¸ֳ©ֳ·ֳ÷ ֳ₪ֳ²ֳµ ֳ¡ֳ±ֳ£ֳ¸ ֳ÷ֳ§ֳ©ֳ¬ֳ©
      * </b>
 	 * 
-	 * @param tree עץ בינרי גנרי
-	 * @return מחרוזת המתארת את סריקת העץ בסדר תחילי
+	 * @param tree ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ¢ֳ°ֳ¸ֳ©
+	 * @return ֳ®ֳ§ֳ¸ֳ¥ֳ¦ֳ÷ ֳ₪ֳ®ֳ÷ֳ ֳ¸ֳ÷ ֳ ֳ÷ ֳ±ֳ¸ֳ©ֳ·ֳ÷ ֳ₪ֳ²ֳµ ֳ¡ֳ±ֳ£ֳ¸ ֳ÷ֳ§ֳ©ֳ¬ֳ©
 	 */
 	public static String preOrderTraversal(BinTreeNode<?> tree)
 	{
@@ -122,11 +122,11 @@ public final class BinTreeUtils
 	/**
 	 * <dt dir="rtl" >
      * <b>
-	 * פעולה המחזירה מחרוזת המתארת את סריקת העץ בסדר תוכי
+	 * ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ₪ֳ®ֳ§ֳ¦ֳ©ֳ¸ֳ₪ ֳ®ֳ§ֳ¸ֳ¥ֳ¦ֳ÷ ֳ₪ֳ®ֳ÷ֳ ֳ¸ֳ÷ ֳ ֳ÷ ֳ±ֳ¸ֳ©ֳ·ֳ÷ ֳ₪ֳ²ֳµ ֳ¡ֳ±ֳ£ֳ¸ ֳ÷ֳ¥ֳ«ֳ©
      * </b>
 	 * 
-	 * @param tree עץ בינרי גנרי
-	 * @return מחרוזת המתארת את סריקת העץ בסדר תוכי
+	 * @param tree ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ¢ֳ°ֳ¸ֳ©
+	 * @return ֳ®ֳ§ֳ¸ֳ¥ֳ¦ֳ÷ ֳ₪ֳ®ֳ÷ֳ ֳ¸ֳ÷ ֳ ֳ÷ ֳ±ֳ¸ֳ©ֳ·ֳ÷ ֳ₪ֳ²ֳµ ֳ¡ֳ±ֳ£ֳ¸ ֳ÷ֳ¥ֳ«ֳ©
 	 */
 	public static String inOrderTraversal(BinTreeNode<?> tree)
 	{
@@ -146,11 +146,11 @@ public final class BinTreeUtils
 	/**
 	 * <dt dir="rtl" >
      * <b>
-	 * פעולה המחזירה מחרוזת המתארת את סריקת העץ בסדר סופי
+	 * ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ₪ֳ®ֳ§ֳ¦ֳ©ֳ¸ֳ₪ ֳ®ֳ§ֳ¸ֳ¥ֳ¦ֳ÷ ֳ₪ֳ®ֳ÷ֳ ֳ¸ֳ÷ ֳ ֳ÷ ֳ±ֳ¸ֳ©ֳ·ֳ÷ ֳ₪ֳ²ֳµ ֳ¡ֳ±ֳ£ֳ¸ ֳ±ֳ¥ֳ´ֳ©
      * </b>
 	 * 
-	 * @param tree עץ בינרי גנרי
-	 * @return מחרוזת המתארת את סריקת העץ בסדר סופי
+	 * @param tree ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ¢ֳ°ֳ¸ֳ©
+	 * @return ֳ®ֳ§ֳ¸ֳ¥ֳ¦ֳ÷ ֳ₪ֳ®ֳ÷ֳ ֳ¸ֳ÷ ֳ ֳ÷ ֳ±ֳ¸ֳ©ֳ·ֳ÷ ֳ₪ֳ²ֳµ ֳ¡ֳ±ֳ£ֳ¸ ֳ±ֳ¥ֳ´ֳ©
 	 */
 	public static String postOrderTraversal(BinTreeNode<?> tree)
 	{
@@ -196,11 +196,11 @@ public final class BinTreeUtils
 	/**
 	 * <dt dir="rtl" >
      * <b>
-	 * פעולה המחזירה מחרוזת המתארת את סריקת העץ לפי רמות
+	 * ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ₪ֳ®ֳ§ֳ¦ֳ©ֳ¸ֳ₪ ֳ®ֳ§ֳ¸ֳ¥ֳ¦ֳ÷ ֳ₪ֳ®ֳ÷ֳ ֳ¸ֳ÷ ֳ ֳ÷ ֳ±ֳ¸ֳ©ֳ·ֳ÷ ֳ₪ֳ²ֳµ ֳ¬ֳ´ֳ© ֳ¸ֳ®ֳ¥ֳ÷
      * </b>
 	 * 
-	 * @param tree עץ בינרי גנרי
-	 * @return מחרוזת המתארת את סריקת העץ לפי רמות
+	 * @param tree ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ¢ֳ°ֳ¸ֳ©
+	 * @return ֳ®ֳ§ֳ¸ֳ¥ֳ¦ֳ÷ ֳ₪ֳ®ֳ÷ֳ ֳ¸ֳ÷ ֳ ֳ÷ ֳ±ֳ¸ֳ©ֳ·ֳ÷ ֳ₪ֳ²ֳµ ֳ¬ֳ´ֳ© ֳ¸ֳ®ֳ¥ֳ÷
 	 */
     public static String levelOrderTraversal(BinTreeNode<?> tree)
 	{
@@ -225,11 +225,11 @@ public final class BinTreeUtils
     /**
 	 * <dt dir="rtl" >
      * <b>
-     * פעולה המחזירה את גובה העץ (עץ עלה גובהו 0)
+     * ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ₪ֳ®ֳ§ֳ¦ֳ©ֳ¸ֳ₪ ֳ ֳ÷ ֳ¢ֳ¥ֳ¡ֳ₪ ֳ₪ֳ²ֳµ (ֳ²ֳµ ֳ²ֳ¬ֳ₪ ֳ¢ֳ¥ֳ¡ֳ₪ֳ¥ 0)
      * </b>
 	 * 
-	 * @param tree עץ בינרי גנרי
-	 * @return גובה העץ
+	 * @param tree ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ¢ֳ°ֳ¸ֳ©
+	 * @return ֳ¢ֳ¥ֳ¡ֳ₪ ֳ₪ֳ²ֳµ
      */
 	public static int height(BinTreeNode<?> tree)
     {
@@ -243,7 +243,7 @@ public final class BinTreeUtils
     	return(Math.max(hl,hr));
     }    
 	
-	/* פעולה זו גם מחשבת בצורה תקינה את גובה העץ, אבל לא מומלץ לכתוב כך
+	/* ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ¦ֳ¥ ֳ¢ֳ­ ֳ®ֳ§ֳ¹ֳ¡ֳ÷ ֳ¡ֳ¶ֳ¥ֳ¸ֳ₪ ֳ÷ֳ·ֳ©ֳ°ֳ₪ ֳ ֳ÷ ֳ¢ֳ¥ֳ¡ֳ₪ ֳ₪ֳ²ֳµ, ֳ ֳ¡ֳ¬ ֳ¬ֳ  ֳ®ֳ¥ֳ®ֳ¬ֳµ ֳ¬ֳ«ֳ÷ֳ¥ֳ¡ ֳ«ֳ×
 	public static <T> int height2(BinTree<T> t)
 	{
 		if(t==null)
@@ -256,11 +256,11 @@ public final class BinTreeUtils
 	/**
 	 * <dt dir="rtl" >
      * <b>
-	 * הפעולה מחזירה את מספר הצמתים בעץ
+	 * ֳ₪ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ®ֳ§ֳ¦ֳ©ֳ¸ֳ₪ ֳ ֳ÷ ֳ®ֳ±ֳ´ֳ¸ ֳ₪ֳ¶ֳ®ֳ÷ֳ©ֳ­ ֳ¡ֳ²ֳµ
      * </b>
 	 * 
-	 * @param tree עץ בינרי גנרי
-	 * @return מספר הצמתים בעץ
+	 * @param tree ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ¢ֳ°ֳ¸ֳ©
+	 * @return ֳ®ֳ±ֳ´ֳ¸ ֳ₪ֳ¶ֳ®ֳ÷ֳ©ֳ­ ֳ¡ֳ²ֳµ
 	 */
 	public static int numOfNodes(BinTreeNode<?> tree)
 	{
@@ -274,7 +274,7 @@ public final class BinTreeUtils
 		return(1 + nl + nr);
 	}
 	 
-    /* פעולה זו גם מחשבת בצורה תקינה את מספר הצמתים בעץ - דרך נוספת
+    /* ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ¦ֳ¥ ֳ¢ֳ­ ֳ®ֳ§ֳ¹ֳ¡ֳ÷ ֳ¡ֳ¶ֳ¥ֳ¸ֳ₪ ֳ÷ֳ·ֳ©ֳ°ֳ₪ ֳ ֳ÷ ֳ®ֳ±ֳ´ֳ¸ ֳ₪ֳ¶ֳ®ֳ÷ֳ©ֳ­ ֳ¡ֳ²ֳµ - ֳ£ֳ¸ֳ× ֳ°ֳ¥ֳ±ֳ´ֳ÷
     public static <T> int numOfNodes2(BinTree<T> tree)
     {
     	int n = 0;
@@ -286,7 +286,7 @@ public final class BinTreeUtils
     	return(1 + n);
     }    
     
-    // פעולה זו גם מחשבת בצורה תקינה את מספר הצמתים בעץ, אבל לא מומלץ לכתוב כך
+    // ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ¦ֳ¥ ֳ¢ֳ­ ֳ®ֳ§ֳ¹ֳ¡ֳ÷ ֳ¡ֳ¶ֳ¥ֳ¸ֳ₪ ֳ÷ֳ·ֳ©ֳ°ֳ₪ ֳ ֳ÷ ֳ®ֳ±ֳ´ֳ¸ ֳ₪ֳ¶ֳ®ֳ÷ֳ©ֳ­ ֳ¡ֳ²ֳµ, ֳ ֳ¡ֳ¬ ֳ¬ֳ  ֳ®ֳ¥ֳ®ֳ¬ֳµ ֳ¬ֳ«ֳ÷ֳ¥ֳ¡ ֳ«ֳ×
     public static <T> int numOfNodes3(BinTree<T> tree)
     {
     	if(tree==null)
@@ -298,11 +298,11 @@ public final class BinTreeUtils
     /**
 	 * <dt dir="rtl" >
      * <b>
-     * הפעולה מחזירה עץ בינרי חדש שהוא העתק מדוייק (שכפול) של העץ שהתקבל
+     * ֳ₪ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ®ֳ§ֳ¦ֳ©ֳ¸ֳ₪ ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ§ֳ£ֳ¹ ֳ¹ֳ₪ֳ¥ֳ  ֳ₪ֳ²ֳ÷ֳ· ֳ®ֳ£ֳ¥ֳ©ֳ©ֳ· (ֳ¹ֳ«ֳ´ֳ¥ֳ¬) ֳ¹ֳ¬ ֳ₪ֳ²ֳµ ֳ¹ֳ₪ֳ÷ֳ·ֳ¡ֳ¬
      * </b>
 	 * 
-	 * @param tree עץ בינרי גנרי
-	 * @return עץ בינרי 
+	 * @param tree ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ¢ֳ°ֳ¸ֳ©
+	 * @return ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© 
      */
 	public static <T> BinTreeNode<T> clone(BinTreeNode<T> tree)
 	{
@@ -318,7 +318,7 @@ public final class BinTreeUtils
 	}
 	 
 	/**
-	 * מחזירה עץ 'פירמידה' של מספרים שלמים
+	 * ֳ®ֳ§ֳ¦ֳ©ֳ¸ֳ₪ ֳ²ֳµ 'ֳ´ֳ©ֳ¸ֳ®ֳ©ֳ£ֳ₪' ֳ¹ֳ¬ ֳ®ֳ±ֳ´ֳ¸ֳ©ֳ­ ֳ¹ֳ¬ֳ®ֳ©ֳ­
 	 */
 //    private static BinTree<Integer> createPiramidTree(int h)
 //    {
@@ -327,7 +327,7 @@ public final class BinTreeUtils
 //    	return(new BinTree<Integer>(h, createPiramidTree(h-1),createPiramidTree(h-1)));
 //    }
     
-    /* פעולה זו גם יוצרת עץ פירמידה
+    /* ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ¦ֳ¥ ֳ¢ֳ­ ֳ©ֳ¥ֳ¶ֳ¸ֳ÷ ֳ²ֳµ ֳ´ֳ©ֳ¸ֳ®ֳ©ֳ£ֳ₪
     public static BinTree<Integer> createPiramidTree2(int h)
     {
     	BinTree<Integer> t = new BinTree<Integer>(h);
@@ -340,7 +340,7 @@ public final class BinTreeUtils
     }
     */
     
-    //h בודק האם העץ הוא עץ פירמידה בגובה
+    //h ֳ¡ֳ¥ֳ£ֳ· ֳ₪ֳ ֳ­ ֳ₪ֳ²ֳµ ֳ₪ֳ¥ֳ  ֳ²ֳµ ֳ´ֳ©ֳ¸ֳ®ֳ©ֳ£ֳ₪ ֳ¡ֳ¢ֳ¥ֳ¡ֳ₪
 //    private static boolean isPyramidTree(BinTree<Integer> tree, int h)
 //    {
 //    	if(tree.getInfo() != h)
@@ -358,11 +358,11 @@ public final class BinTreeUtils
     /**
 	 * <dt dir="rtl" >
      * <b>
-     * הפעולה בודקת האם העץ מלא
+     * ֳ₪ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ¡ֳ¥ֳ£ֳ·ֳ÷ ֳ₪ֳ ֳ­ ֳ₪ֳ²ֳµ ֳ®ֳ¬ֳ 
      * </b>
 	 * 
-	 * @param tree עץ בינרי גנרי
-	 * @return הפעולה מחזירה 'אמת' אם העץ מלא, ו'שקר' אחרת 
+	 * @param tree ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ¢ֳ°ֳ¸ֳ©
+	 * @return ֳ₪ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ®ֳ§ֳ¦ֳ©ֳ¸ֳ₪ 'ֳ ֳ®ֳ÷' ֳ ֳ­ ֳ₪ֳ²ֳµ ֳ®ֳ¬ֳ , ֳ¥'ֳ¹ֳ·ֳ¸' ֳ ֳ§ֳ¸ֳ÷ 
      */
     public static boolean isFull(BinTreeNode<?> tree)
     {   	
@@ -381,11 +381,11 @@ public final class BinTreeUtils
     /**
 	 * <dt dir="rtl" >
      * <b>
-     * הפעולה מחזירה את הערך הגדול ביותר בעץ בינרי של מספרים שלמים
+     * ֳ₪ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ®ֳ§ֳ¦ֳ©ֳ¸ֳ₪ ֳ ֳ÷ ֳ₪ֳ²ֳ¸ֳ× ֳ₪ֳ¢ֳ£ֳ¥ֳ¬ ֳ¡ֳ©ֳ¥ֳ÷ֳ¸ ֳ¡ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ¹ֳ¬ ֳ®ֳ±ֳ´ֳ¸ֳ©ֳ­ ֳ¹ֳ¬ֳ®ֳ©ֳ­
      * </b>
 	 * 
-	 * @param tree עץ בינרי של מספרים שלמים
-	 * @return הערך הגדול ביותר בעץ 
+	 * @param tree ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ¹ֳ¬ ֳ®ֳ±ֳ´ֳ¸ֳ©ֳ­ ֳ¹ֳ¬ֳ®ֳ©ֳ­
+	 * @return ֳ₪ֳ²ֳ¸ֳ× ֳ₪ֳ¢ֳ£ֳ¥ֳ¬ ֳ¡ֳ©ֳ¥ֳ÷ֳ¸ ֳ¡ֳ²ֳµ 
      */   
     public static int max(BinTreeNode<Integer> tree)
     {
@@ -402,11 +402,11 @@ public final class BinTreeUtils
     /**
 	 * <dt dir="rtl" >
      * <b>
-     * הפעולה מחזירה את סכום הצמתים בעץ בינרי של מספרים שלמים
+     * ֳ₪ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ®ֳ§ֳ¦ֳ©ֳ¸ֳ₪ ֳ ֳ÷ ֳ±ֳ«ֳ¥ֳ­ ֳ₪ֳ¶ֳ®ֳ÷ֳ©ֳ­ ֳ¡ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ¹ֳ¬ ֳ®ֳ±ֳ´ֳ¸ֳ©ֳ­ ֳ¹ֳ¬ֳ®ֳ©ֳ­
      * </b>
 	 * 
-	 * @param tree עץ בינרי של מספרים שלמים
-	 * @return סכום כל ערכי הצמתים בעץ 
+	 * @param tree ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ¹ֳ¬ ֳ®ֳ±ֳ´ֳ¸ֳ©ֳ­ ֳ¹ֳ¬ֳ®ֳ©ֳ­
+	 * @return ֳ±ֳ«ֳ¥ֳ­ ֳ«ֳ¬ ֳ²ֳ¸ֳ«ֳ© ֳ₪ֳ¶ֳ®ֳ÷ֳ©ֳ­ ֳ¡ֳ²ֳµ 
      */    
     public static int sumOfNodes(BinTreeNode<Integer> tree)
     {
@@ -423,12 +423,12 @@ public final class BinTreeUtils
     /**
 	 * <dt dir="rtl" >
      * <b>
-     * הפעולה מחזירה את סכום הצמתים ברמה מסויימת בעץ בינרי של מספרים שלמים
+     * ֳ₪ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ®ֳ§ֳ¦ֳ©ֳ¸ֳ₪ ֳ ֳ÷ ֳ±ֳ«ֳ¥ֳ­ ֳ₪ֳ¶ֳ®ֳ÷ֳ©ֳ­ ֳ¡ֳ¸ֳ®ֳ₪ ֳ®ֳ±ֳ¥ֳ©ֳ©ֳ®ֳ÷ ֳ¡ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ¹ֳ¬ ֳ®ֳ±ֳ´ֳ¸ֳ©ֳ­ ֳ¹ֳ¬ֳ®ֳ©ֳ­
      * </b>
 	 * 
-	 * @param tree עץ בינרי של מספרים שלמים
-	 * @param level רמה בעץ(מספר גדול או שווה לאפס)
-	 * @return סכום הצמתים ברמה מסויימת בעץ 
+	 * @param tree ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ¹ֳ¬ ֳ®ֳ±ֳ´ֳ¸ֳ©ֳ­ ֳ¹ֳ¬ֳ®ֳ©ֳ­
+	 * @param level ֳ¸ֳ®ֳ₪ ֳ¡ֳ²ֳµ(ֳ®ֳ±ֳ´ֳ¸ ֳ¢ֳ£ֳ¥ֳ¬ ֳ ֳ¥ ֳ¹ֳ¥ֳ¥ֳ₪ ֳ¬ֳ ֳ´ֳ±)
+	 * @return ֳ±ֳ«ֳ¥ֳ­ ֳ₪ֳ¶ֳ®ֳ÷ֳ©ֳ­ ֳ¡ֳ¸ֳ®ֳ₪ ֳ®ֳ±ֳ¥ֳ©ֳ©ֳ®ֳ÷ ֳ¡ֳ²ֳµ 
      */   
     public static int sumOfNodesInLevel(BinTreeNode<Integer> tree, int level)
     {
@@ -447,11 +447,11 @@ public final class BinTreeUtils
     /**
 	 * <dt dir="rtl" >
      * <b>
-     * הפעולה שבודקת האם כל הצמתים בעץ חיוביים
+     * ֳ₪ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ¹ֳ¡ֳ¥ֳ£ֳ·ֳ÷ ֳ₪ֳ ֳ­ ֳ«ֳ¬ ֳ₪ֳ¶ֳ®ֳ÷ֳ©ֳ­ ֳ¡ֳ²ֳµ ֳ§ֳ©ֳ¥ֳ¡ֳ©ֳ©ֳ­
      * </b>
 	 * 
-	 * @param tree עץ בינרי של מספרים שלמים
-	 * @return מחזירה 'אמת' אם כל הצמתים בעץ חיוביים, ו'שקר' אחרת 
+	 * @param tree ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ¹ֳ¬ ֳ®ֳ±ֳ´ֳ¸ֳ©ֳ­ ֳ¹ֳ¬ֳ®ֳ©ֳ­
+	 * @return ֳ®ֳ§ֳ¦ֳ©ֳ¸ֳ₪ 'ֳ ֳ®ֳ÷' ֳ ֳ­ ֳ«ֳ¬ ֳ₪ֳ¶ֳ®ֳ÷ֳ©ֳ­ ֳ¡ֳ²ֳµ ֳ§ֳ©ֳ¥ֳ¡ֳ©ֳ©ֳ­, ֳ¥'ֳ¹ֳ·ֳ¸' ֳ ֳ§ֳ¸ֳ÷ 
      */  
     public static boolean isAllPositive(BinTreeNode<Integer> tree)
     {
@@ -470,12 +470,12 @@ public final class BinTreeUtils
     /**
 	 * <dt dir="rtl" >
      * <b>
-     * הפעולה שבודקת האם ערך מסויים נמצא בעץ
+     * ֳ₪ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ¹ֳ¡ֳ¥ֳ£ֳ·ֳ÷ ֳ₪ֳ ֳ­ ֳ²ֳ¸ֳ× ֳ®ֳ±ֳ¥ֳ©ֳ©ֳ­ ֳ°ֳ®ֳ¶ֳ  ֳ¡ֳ²ֳµ
      * </b>
 	 * 
-	 * @param tree עץ בינרי של מספרים שלמים
-	 * @param x ערך לחיפוש
-	 * @return הפעולה מחזירה 'אמת' אם הערך המתקבל נמצא בעץ, ו'שקר' אחרת 
+	 * @param tree ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ¹ֳ¬ ֳ®ֳ±ֳ´ֳ¸ֳ©ֳ­ ֳ¹ֳ¬ֳ®ֳ©ֳ­
+	 * @param x ֳ²ֳ¸ֳ× ֳ¬ֳ§ֳ©ֳ´ֳ¥ֳ¹
+	 * @return ֳ₪ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ®ֳ§ֳ¦ֳ©ֳ¸ֳ₪ 'ֳ ֳ®ֳ÷' ֳ ֳ­ ֳ₪ֳ²ֳ¸ֳ× ֳ₪ֳ®ֳ÷ֳ·ֳ¡ֳ¬ ֳ°ֳ®ֳ¶ֳ  ֳ¡ֳ²ֳµ, ֳ¥'ֳ¹ֳ·ֳ¸' ֳ ֳ§ֳ¸ֳ÷ 
      */   
     public static boolean exists(BinTreeNode<Integer> tree, int x)
     {
@@ -490,16 +490,16 @@ public final class BinTreeUtils
     		resR = exists(tree.getRight(),x);
     	return(resL || resR);
     }    
-    //null רצוי לכתוב פעולה שמחזירה הפנייה לערך אם קיים אחרת יוחזר 
+    //null ֳ¸ֳ¶ֳ¥ֳ© ֳ¬ֳ«ֳ÷ֳ¥ֳ¡ ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ¹ֳ®ֳ§ֳ¦ֳ©ֳ¸ֳ₪ ֳ₪ֳ´ֳ°ֳ©ֳ©ֳ₪ ֳ¬ֳ²ֳ¸ֳ× ֳ ֳ­ ֳ·ֳ©ֳ©ֳ­ ֳ ֳ§ֳ¸ֳ÷ ֳ©ֳ¥ֳ§ֳ¦ֳ¸ 
     
     /**
 	 * <dt dir="rtl" >
      * <b>
-     * הפעולה שבודקת האם העץ שמתקבל הוא עץ עלה
+     * ֳ₪ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ¹ֳ¡ֳ¥ֳ£ֳ·ֳ÷ ֳ₪ֳ ֳ­ ֳ₪ֳ²ֳµ ֳ¹ֳ®ֳ÷ֳ·ֳ¡ֳ¬ ֳ₪ֳ¥ֳ  ֳ²ֳµ ֳ²ֳ¬ֳ₪
      * </b>
 	 * 
-	 * @param tree עץ בינרי גנרי
-	 * @return הפעולה מחזירה 'אמת' אם העץ הוא עץ עלה, ו'שקר' אחרת 
+	 * @param tree ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ¢ֳ°ֳ¸ֳ©
+	 * @return ֳ₪ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ®ֳ§ֳ¦ֳ©ֳ¸ֳ₪ 'ֳ ֳ®ֳ÷' ֳ ֳ­ ֳ₪ֳ²ֳµ ֳ₪ֳ¥ֳ  ֳ²ֳµ ֳ²ֳ¬ֳ₪, ֳ¥'ֳ¹ֳ·ֳ¸' ֳ ֳ§ֳ¸ֳ÷ 
      */
     public static boolean isLeaf(BinTreeNode<?> tree)
     {
@@ -509,11 +509,11 @@ public final class BinTreeUtils
     /**
 	 * <dt dir="rtl" >
      * <b>
-     * הפעולה מחזירה את מספר העלים בעץ
+     * ֳ₪ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ®ֳ§ֳ¦ֳ©ֳ¸ֳ₪ ֳ ֳ÷ ֳ®ֳ±ֳ´ֳ¸ ֳ₪ֳ²ֳ¬ֳ©ֳ­ ֳ¡ֳ²ֳµ
      * </b>
 	 * 
-	 * @param tree עץ בינרי גנרי
-	 * @return מספר העלים בעץ 
+	 * @param tree ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ¢ֳ°ֳ¸ֳ©
+	 * @return ֳ®ֳ±ֳ´ֳ¸ ֳ₪ֳ²ֳ¬ֳ©ֳ­ ֳ¡ֳ²ֳµ 
      */     
     public static int numOfLeaves(BinTreeNode<?> tree)
     {
@@ -554,12 +554,12 @@ public final class BinTreeUtils
     /**
 	 * <dt dir="rtl" >
      * <b>
-     *  הפעולה מחזירה את ההורה של צומת מסוים בעץ; במידה והצומת הוא שורש העץ יוחזר null 
+     *  ֳ₪ֳ´ֳ²ֳ¥ֳ¬ֳ₪ ֳ®ֳ§ֳ¦ֳ©ֳ¸ֳ₪ ֳ ֳ÷ ֳ₪ֳ₪ֳ¥ֳ¸ֳ₪ ֳ¹ֳ¬ ֳ¶ֳ¥ֳ®ֳ÷ ֳ®ֳ±ֳ¥ֳ©ֳ­ ֳ¡ֳ²ֳµ; ֳ¡ֳ®ֳ©ֳ£ֳ₪ ֳ¥ֳ₪ֳ¶ֳ¥ֳ®ֳ÷ ֳ₪ֳ¥ֳ  ֳ¹ֳ¥ֳ¸ֳ¹ ֳ₪ֳ²ֳµ ֳ©ֳ¥ֳ§ֳ¦ֳ¸ null 
      * </b>
 	 * 
-	 * @param tree עץ בינרי גנרי
-	 * @param child הפנייה לצומת בעץ
-	 * @return הפנייה לשורש העץ שהוא הורה
+	 * @param tree ֳ²ֳµ ֳ¡ֳ©ֳ°ֳ¸ֳ© ֳ¢ֳ°ֳ¸ֳ©
+	 * @param child ֳ₪ֳ´ֳ°ֳ©ֳ©ֳ₪ ֳ¬ֳ¶ֳ¥ֳ®ֳ÷ ֳ¡ֳ²ֳµ
+	 * @return ֳ₪ֳ´ֳ°ֳ©ֳ©ֳ₪ ֳ¬ֳ¹ֳ¥ֳ¸ֳ¹ ֳ₪ֳ²ֳµ ֳ¹ֳ₪ֳ¥ֳ  ֳ₪ֳ¥ֳ¸ֳ₪
      */
     public static BinTreeNode<?> parent(BinTreeNode<?> tree, BinTreeNode<?> child)
     {	

@@ -1,4 +1,4 @@
-package week5_data_structures;
+package week05_data_structures;
 
 public class Node<T> {
 	private T info;

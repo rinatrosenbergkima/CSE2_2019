@@ -1,4 +1,4 @@
-package week5_data_structures;
+package week05_data_structures;
 
 public class StackArrInt {
 	public static final int STACK_SIZE = 100;

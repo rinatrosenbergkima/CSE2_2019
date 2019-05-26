@@ -1,4 +1,4 @@
-package week7_trees;
+package week07_trees;
 import unit4_collectionsLib.*;
 import unit4_utilsLib.*;
 public class TreeExample {

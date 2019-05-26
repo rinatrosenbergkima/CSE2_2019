@@ -1,4 +1,4 @@
-package week5_data_structures;
+package week05_data_structures;
 
 public class Stuck<T> {
 	private Node<T> first;
